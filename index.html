@@ -129,6 +129,108 @@ span{
    
     <button type="submit"  onclick="submits()">Submit</button>
        </form>
+<script>
+function check_name(){
+ var name = document.getElementById('username').value;
+var name_length=name.length;
+
+var tauntemoji =["&#128518","&#128553","&#128548","&#129303","&#128522","&#128566","&#128580"];
+
+document.getElementById('notifiername').style.opacity ="1";
+
+ var color ,temoji,boolean ;
+ var c=0;
+ if(name==" " || name_length==0){
+  temoji=tauntemoji[5];
+  c+=1;
+   }
+    else if(name_length<3 && name_length!=0){
+         temoji=tauntemoji[1];
+     c+=1;
+  }
+ else if(name_length>=3){temoji=tauntemoji[3]; 
+ }
+ 
+if(c>0){
+color="#eb3349"; 
+      boolean="false";}
+else{boolean="true";}
+ document.getElementById('notifiername').style.background=color;
+ document.getElementById('notifiername').innerHTML = temoji;
+ 
+ return boolean;
+ 
+}
+
+//for validating password
+
+function check_passwrd(){
+var passwrd = document.getElementById('password').value;
+
+var passwrd_length=passwrd.length;
+
+document.getElementById('notifierpasswrd').style.opacity ="1";
+
+/*laughing badly,wearyface,triumph,crazy,smilingface,facewithout,glasses*,fingerscrossed*/
+
+var tauntemoji =["&#128514","&#128553","&#128548","&#129322","&#128522","&#128566","&#128580","&#128526","&#129310"];
+
+ var color ,temoji,boolean;
+ var c=0;
+ if(passwrd==" " || passwrd_length==0){
+  temoji=tauntemoji[6];
+  c+=1;
+   }
+
+ else if(passwrd_length<3 && passwrd_length!=0){
+         temoji=tauntemoji[0];
+         c+=1;
+      }
+
+else if(passwrd_length==3){
+    temoji=tauntemoji[1];
+    c+=1;
+}
+
+else if(passwrd_length>=3 && passwrd_length<=5 ){temoji=tauntemoji[8]; 
+ 
+ }
+ else if(passwrd_length>5 && passwrd_length<=10 ){temoji=tauntemoji[4]; 
+ }
+ 
+ else if(passwrd_length>10){
+     temoji =tauntemoji[7];
+ }
+
+if(c>0)
+{color="#eb3349"; boolean= "false";}
+else{boolean="true";}
+ document.getElementById('notifierpasswrd').style.background=color;
+ document.getElementById('notifierpasswrd').innerHTML=temoji;     
+ 
+ return boolean;
+}
+
+/*clears span display when user choses to change name or password*/
+
+function new_name(){  
+ document.getElementById('notifiername').style.opacity="0";
+}
+function new_passwrd(){ document.getElementById('notifierpasswrd').style.opacity="0";
+ 
+}
+
+function submits(){
+
+    if(check_passwrd()=="true" && check_name()=="true"){
+  window.alert("great! Login Successful");
+    }
+    else {
+     window.alert("You had a week username or Password ");
+    }
+}
+
+</script>
        
         
     </body>
