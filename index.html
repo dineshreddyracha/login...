@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Login Page</title>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<meta name="author" content="Ron">
+<meta name="description" content="interactive login page">
+   </head>
+    <body>
+
+           <form id="login_form">
+            
+                 <p id="form">login...</p>
+                 <!--input name-->
+ <input maxlength="15" type="text" placeholder="username" id="username" onmouseout="check_name()"
+ onmouseover="new_name()"
+ >
+ 
+ <span id="notifiername" class="notify"></span>
+ 
+ <input maxlength="15" type"password" placeholder="password"
+ id="password" 
+ onmouseout="check_passwrd()"
+ onmouseover="new_passwrd()"> 
+      
+   <span id="notifierpasswrd" class="notify"></span>
+   
+    <button type="submit"  onclick="submits()">Submit</button>
+       </form>
+       
+        
+    </body>
+</html>
